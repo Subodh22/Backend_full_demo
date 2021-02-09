@@ -1,0 +1,21 @@
+<button class="btn btn-primary" > Click</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Topic</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Ahead_of</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+
+      <td>{{post["name"]}}</td>
+      <td>{{post["subject"]}}</td>
+      <td>{{post["degree"]}}</td>
+
+    </tr>
+
+  </tbody>
+</table>
