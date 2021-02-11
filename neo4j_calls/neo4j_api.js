@@ -1,10 +1,10 @@
 let neo4j = require('neo4j-driver');
 let { creds } = require("../config/credentials");
-let driver = neo4j.driver("bolt://0.0.0.0:7687", neo4j.auth.basic(creds.neo4jusername, creds.neo4jpw));
+let driver = neo4j.driver("bolt://18.225.9.176/:7687", neo4j.auth.basic(creds.neo4jusername, creds.neo4jpw));
 
 exports.get_num_nodes = async function () {
     let session = driver.session();
-    const num_nodes = await session.run('match (n:topic)  return {name:n.name,subject:n.subject,degree:n.degree} as re', {
+    const num_nodes = await session.run('match (n:topic{name:"Validity"})  return {name:n.name,subject:n.subject,degree:n.degree} as re', {
     });
     session.close();
     var list=[];
